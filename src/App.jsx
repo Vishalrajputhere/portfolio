@@ -1,5 +1,5 @@
 import './App.css';
-import AnimatedRoutes from './components/animatedRoutes';
+import AnimatedRoutes from './components/AnimatedRoutes';
 import Navbar from './components/Navbar';
 
 import bgimg from './img/bg2.jpg';
