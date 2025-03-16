@@ -1,4 +1,12 @@
 {
-    "routes": [{ "src": "/(.*)", "dest": "/index.html" }]
+    "routes": [{ "src": "/(.*)", "dest": "/index.html" }],
+    "headers": [
+      {
+        "source": "/site.webmanifest",
+        "headers": [
+          { "key": "Content-Type", "value": "application/manifest+json" }
+        ]
+      }
+    ]
   }
-  
+ 
