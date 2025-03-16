@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://vishalrajputhere.github.io/",
   "scripts": {
   "dev": "vite",
   "build": "vite build",
   "preview": "vite preview",
-  "deploy": "gh-pages -d dist",
-  "homepage": "https://vishalrajputhere.github.io/"
+  "deploy": "gh-pages -d dist"
 },
 
   "dependencies": {
