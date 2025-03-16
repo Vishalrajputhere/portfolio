@@ -4,7 +4,7 @@ import { Viewer, Worker } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
-import resume from "../pdf/resume.pdf"
+import resume from "/resume.pdf"
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from 'framer-motion';
 
@@ -21,13 +21,13 @@ function Resume() {
       transition={{ duration: 0.5 }}   >
 
                 <div className=' min-w-full  text-center mt-24 '>
-                    <button className=' bg-violet-500   cursor-pointer rounded-md py-2 px-8 font-semibold font-sans transition-all duration-300 ease-in-out hover:bg-violet-700 hover:scale-105 '><FaDownload className=' inline' /><a href={resume} > <a href="../../public/resume.pdf" download="Vishal_Rajput_CV"> Download CV</a> </a></button>
+                    <button className=' bg-violet-500   cursor-pointer rounded-md py-2 px-8 font-semibold font-sans transition-all duration-300 ease-in-out hover:bg-violet-700 hover:scale-105 '><FaDownload className=' inline' /> <a href="/resume.pdf" download="Vishal_Rajput_CV"> Download CV</a></button>
                 </div>
 
                 <div className=' h-full  min-w-full mt-10 md:px-36 px-5 rounded-md'>
                     <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
 
-                        <Viewer fileUrl={resume} plugins={[defaultLayoutPlugin]} />
+                        <Viewer fileUrl="/resume.pdf" plugins={[defaultLayoutPlugin]} />
 
                     </Worker>
                 </div>
