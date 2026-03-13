@@ -96,7 +96,7 @@ function Navbar() {
       initial="initial"
       animate="animate"
       className={`min-w-full min-h-14 text-white font-black text-2xl flex flex-row justify-between items-center px-5 sticky top-0 left-0 z-50 transition-all duration-300
-      ${scrolling ? "bg-gray-900/70 backdrop-blur-lg shadow-lg" : "bg-transparent"}`}
+      ${scrolling ? "bg-gray-900/60 backdrop-blur-xl shadow-lg border-b border-white/10" : "bg-transparent border-b border-transparent"}`}
     >
       {/* Logo */}
       <div className="flex items-center cursor-pointer">
@@ -139,7 +139,7 @@ function Navbar() {
 
         <button
           onClick={handleHireMe}
-          className="sm:mx-7 px-4 py-2 bg-purple-700 text-white border-2 border-black rounded-md font-mono transition-all duration-300 ease-in-out hover:bg-purple-400 hover:text-black text-center hover:scale-105"
+          className="sm:mx-7 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white rounded-xl font-bold font-mono transition-all duration-300 ease-in-out hover:from-purple-500 hover:to-fuchsia-500 hover:shadow-lg hover:shadow-purple-500/30 hover:scale-[1.05] border border-white/10"
         >
           Hire Me
         </button>
@@ -193,7 +193,7 @@ function Navbar() {
 
               <button
                 onClick={handleHireMe}
-                className="bg-purple-700 text-white px-5 py-2 rounded-xl font-mono transition-all duration-300 ease-in-out hover:bg-purple-400 hover:text-black"
+                className="bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white px-6 py-3 rounded-xl font-bold font-mono transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-purple-500/30 w-11/12 mx-auto"
               >
                 Hire Me
               </button>

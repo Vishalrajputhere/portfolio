@@ -3,6 +3,7 @@ import chatbot from "../img/chatbot.png";
 import todo from "../img/todo.png";
 import currency from "../img/currency_converter.png";
 import proclassroom from "../img/proclassroom.png";
+import paisaalens from "../img/paisaalens.png";
 
 import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -23,6 +24,14 @@ function Project() {
       github: "https://github.com/Vishalrajputhere/pro-classroom",
       demo: "https://pro-classroom2.vercel.app/",
       featured: true,
+    },
+    {
+      title: "PaisaaLens 💸",
+      img: paisaalens,
+      desc: "A full-stack personal finance and expense tracking application designed to help users manage their money efficiently with detailed insights.",
+      tech: ["React", "Node.js", "MongoDB", "Tailwind"],
+      github: "https://github.com/Vishalrajputhere/PaisaaLens",
+      demo: "https://paisaalens.vercel.app/",
     },
     {
       title: "AI Chatbot",
@@ -77,12 +86,12 @@ function Project() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.08, duration: 0.4 }}
-              className={`rounded-2xl border bg-white/5 backdrop-blur-md shadow-xl overflow-hidden
-              hover:scale-[1.02] transition-all duration-300 hover:bg-white/10
+              className={`rounded-2xl border bg-white/5 backdrop-blur-xl shadow-xl overflow-hidden
+              hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 hover:bg-white/10 group
               ${
                 p.featured
-                  ? "border-cyan-400/60 shadow-cyan-500/20"
-                  : "border-fuchsia-400/40 hover:border-fuchsia-500"
+                  ? "border-cyan-400/60 shadow-cyan-500/20 hover:border-cyan-400 hover:shadow-cyan-500/40"
+                  : "border-fuchsia-400/20 hover:border-fuchsia-400 hover:shadow-fuchsia-500/30"
               }
 `}
             >
@@ -97,7 +106,7 @@ function Project() {
                 <img
                   src={p.img}
                   alt={p.title}
-                  className="w-full h-48 object-cover rounded-xl border border-white/10"
+                  className="w-full h-48 object-cover rounded-xl border border-white/10 transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 

@@ -38,7 +38,7 @@ function Home() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="mt-3 text-5xl md:text-6xl font-serif font-bold text-fuchsia-500 leading-tight"
+              className="mt-3 text-5xl md:text-6xl font-serif font-bold bg-gradient-to-r from-fuchsia-400 to-purple-500 bg-clip-text text-transparent leading-tight pb-2"
             >
               Vishal Singh
             </motion.h1>
@@ -71,7 +71,7 @@ function Home() {
             >
               <button
                 onClick={() => navigate("/project")}
-                className="px-6 py-3 rounded-xl bg-purple-700 hover:bg-purple-500 transition font-bold shadow-lg"
+                className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 transition-all font-bold shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:-translate-y-1"
               >
                 View Projects 🚀
               </button>
@@ -80,7 +80,7 @@ function Home() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-xl border border-white/30 hover:bg-white/10 transition font-bold"
+                className="px-8 py-3.5 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all font-bold hover:-translate-y-1"
               >
                 Download Resume 📄
               </a>
@@ -129,16 +129,20 @@ function Home() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="flex justify-center md:justify-end"
           >
-            <div className="relative">
+            <motion.div
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="relative"
+            >
               {/* Glow */}
-              <div className="absolute -inset-2 rounded-2xl bg-purple-500/20 blur-2xl" />
+              <div className="absolute -inset-2 rounded-2xl bg-purple-500/30 blur-2xl" />
 
               <img
                 src={image}
                 alt="Vishal"
                 className="relative rounded-2xl shadow-2xl w-64 md:w-[360px] border border-white/20"
               />
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </motion.section>
