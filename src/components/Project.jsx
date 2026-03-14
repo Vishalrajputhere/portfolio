@@ -22,7 +22,7 @@ function Project() {
         "Similarity Check",
       ],
       github: "https://github.com/Vishalrajputhere/pro-classroom",
-      demo: "https://pro-classroom2.vercel.app/",
+      demo: "https://pro-classroom.vercel.app/",
       featured: true,
     },
     {
