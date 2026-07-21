@@ -1,40 +1,39 @@
 import React from "react";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import { socialLinks } from "../content/siteContent";
 
 function Footer() {
+  const iconMap = {
+    github: FaGithub,
+    linkedin: FaLinkedin,
+    x: FaTwitter,
+  };
+
   return (
-    <footer className="w-full bg-black/90 backdrop-blur-md text-white mt-10">
-      <div className="max-w-6xl mx-auto flex md:flex-row flex-col md:justify-between justify-center items-center gap-3 py-4 px-5 font-bold">
-        <div>Designed and Developed by Vishal Singh</div>
-        <div>Copyright © 2025</div>
+    <footer className="border-t border-white/10 py-6 text-sm text-slate-300">
+      <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <div className="text-center sm:text-left">
+          <div className="font-semibold text-white">Designed and developed by Vishal Singh</div>
+          <div className="mt-1 text-slate-400">Copyright © 2026</div>
+        </div>
 
-        <div className="flex gap-5 text-xl">
-          <a
-            href="https://x.com/Vishal_rajput_0"
-            className="hover:scale-110 transition"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaTwitter className="hover:text-blue-500" />
-          </a>
+        <div className="flex items-center gap-3">
+          {socialLinks.map((link) => {
+            const Icon = iconMap[link.kind];
 
-          <a
-            href="https://www.linkedin.com/in/vishal-singh-a785b7221/"
-            className="hover:scale-110 transition"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin className="hover:text-blue-600" />
-          </a>
-
-          <a
-            href="https://github.com/Vishalrajputhere"
-            className="hover:scale-110 transition"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub className="hover:text-gray-300" />
-          </a>
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                className="rounded-full border border-white/10 bg-white/5 p-3 transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+              >
+                <Icon className="text-base text-white" />
+              </a>
+            );
+          })}
         </div>
       </div>
     </footer>

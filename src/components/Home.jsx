@@ -3,6 +3,7 @@ import image from "../img/vishal.jpg";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { heroContent, highlights, socialLinks, siteConfig } from "../content/siteContent";
 
 function Home() {
   const navigate = useNavigate();
@@ -13,6 +14,12 @@ function Home() {
     exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
   };
 
+  const iconMap = {
+    github: FaGithub,
+    linkedin: FaLinkedin,
+    x: FaTwitter,
+  };
+
   return (
     <>
       <motion.section
@@ -20,134 +27,96 @@ function Home() {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="w-full min-h-[calc(100vh-56px)] flex items-center justify-center px-5 md:px-16 py-10"
+        className="grid min-h-[calc(100vh-7rem)] items-center px-0 py-6"
       >
-        <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center">
-          {/* LEFT */}
-          <div className="text-white">
-            <motion.p
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="text-2xl md:text-3xl font-serif"
-            >
-              Hey, I’m
-            </motion.p>
+        <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+          <div className="space-y-8">
+            <div className="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-100">
+              {heroContent.eyebrow}
+            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="mt-3 text-5xl md:text-6xl font-serif font-bold bg-gradient-to-r from-fuchsia-400 to-purple-500 bg-clip-text text-transparent leading-tight pb-2"
-            >
-              Vishal Singh
-            </motion.h1>
+            <div className="space-y-5">
+              <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                {heroContent.headline}
+              </h1>
+              <p className="max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
+                {heroContent.summary}
+              </p>
+            </div>
 
-            <motion.p
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="mt-5 text-xl md:text-2xl font-semibold"
-            >
-              Full Stack Developer | MCA Student
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="mt-6 text-base md:text-lg text-white/80 font-mono leading-relaxed"
-            >
-              I build clean and responsive web applications using React, Node.js and modern UI tools.
-              If you'd like to collaborate or have any questions, feel free to reach out — I’d love to connect!
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="mt-8 flex flex-wrap gap-4"
-            >
+            <div className="flex flex-wrap gap-3">
               <button
-                onClick={() => navigate("/project")}
-                className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 transition-all font-bold shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:-translate-y-1"
+                onClick={() => navigate(heroContent.primaryAction.href)}
+                className="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
               >
-                View Projects 🚀
+                {heroContent.primaryAction.label}
               </button>
 
+              <a
+                href={heroContent.secondaryAction.href}
+                className="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+              >
+                {heroContent.secondaryAction.label}
+              </a>
+            </div>
+
+            <dl className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              {highlights.map((item) => (
+                <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                  <dt className="text-2xl font-semibold text-white">{item.value}</dt>
+                  <dd className="mt-1 text-sm text-slate-400">{item.label}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-sm font-medium text-slate-400">Find me on</span>
+              {socialLinks.map((link) => {
+                const Icon = iconMap[link.kind];
+
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full border border-white/10 bg-white/5 p-3 text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+                    aria-label={link.label}
+                  >
+                    <Icon />
+                  </a>
+                );
+              })}
               <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3.5 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all font-bold hover:-translate-y-1"
+                className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
               >
-                Download Resume 📄
+                Resume PDF
               </a>
-            </motion.div>
-
-            {/* Socials */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-              className="mt-8 flex gap-6 text-3xl"
-            >
-              <a
-                href="https://x.com/Vishal_rajput_0"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:scale-110 transition"
-              >
-                <FaTwitter className="hover:text-blue-500" />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/vishal-singh-a785b7221/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:scale-110 transition"
-              >
-                <FaLinkedin className="hover:text-blue-600" />
-              </a>
-
-              <a
-                href="https://github.com/Vishalrajputhere"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:scale-110 transition"
-              >
-                <FaGithub className="hover:text-gray-300" />
-              </a>
-            </motion.div>
+            </div>
           </div>
 
-          {/* RIGHT (Image) */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="flex justify-center md:justify-end"
+            transition={{ delay: 0.15, duration: 0.45 }}
+            className="flex justify-center lg:justify-end"
           >
-            <motion.div
-              animate={{ y: [0, -15, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="relative"
-            >
-              {/* Glow */}
-              <div className="absolute -inset-2 rounded-2xl bg-purple-500/30 blur-2xl" />
-
-              <img
-                src={image}
-                alt="Vishal"
-                className="relative rounded-2xl shadow-2xl w-64 md:w-[360px] border border-white/20"
-              />
-            </motion.div>
+            <div className="relative max-w-sm">
+              <div className="absolute -inset-6 rounded-[2rem] bg-cyan-500/10 blur-3xl" />
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur-sm">
+                <img
+                  src={image}
+                  alt={`${siteConfig.name} portrait`}
+                  className="aspect-[4/5] w-full rounded-[1.5rem] object-cover"
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
       </motion.section>
-
-      
     </>
   );
 }
