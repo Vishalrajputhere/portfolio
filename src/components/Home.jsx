@@ -4,6 +4,7 @@ import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { heroContent, highlights, socialLinks, siteConfig } from "../content/siteContent";
+import resumePdfUrl from "../pdf/resume.pdf";
 
 function Home() {
   const navigate = useNavigate();
@@ -88,7 +89,7 @@ function Home() {
                 );
               })}
               <a
-                href="/resume.pdf"
+                href={resumePdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
