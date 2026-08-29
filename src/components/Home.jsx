@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { heroContent, highlights, socialLinks, siteConfig } from "../content/siteContent";
 import resumePdfUrl from "../pdf/resume.pdf";
+import { useEffect } from "react";
 
 function Home() {
   const navigate = useNavigate();

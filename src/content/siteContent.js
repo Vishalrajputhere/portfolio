@@ -46,9 +46,9 @@ export const highlights = [
 
 export const skillGroups = [
   { heading: "Frontend", items: ["React", "Next.js", "Redux Toolkit", "Tailwind CSS", "Ant Design", "HTML", "CSS"] },
-  { heading: "Backend", items: ["Node.js", "Express.js", "REST APIs", "JWT Authentication", "API Rate Limiting"] },
+  { heading: "Backend", items: ["Node.js", "Express.js","Python", "REST APIs", "JWT Authentication", "API Rate Limiting"] },
   { heading: "Database", items: ["MongoDB", "MySQL"] },
-  { heading: "Languages", items: ["JavaScript", "Java", "SQL"] },
+  { heading: "Languages", items: ["JavaScript", "Java","Python", "SQL"] },
   { heading: "Testing", items: ["Jest", "Supertest"] },
   { heading: "Developer Tools", items: ["Git", "Postman", "VS Code", "Cloudinary"] },
 ];
@@ -74,10 +74,15 @@ export const experienceEntries = [
   {
     title: "Web Developer Intern",
     organization: "Eduveera",
-    meta: "Jan 2026 - Jul 2026",
+    meta: "Feb 2026 - Aug 2026",
     description:
-      "Built responsive mobile-first interface components, improved frontend usability, and supported conversion-focused product flows.",
-    technologies: ["React", "Responsive UI", "UX Improvements"],
+      "Worked as a web developer intern contributing to responsive product interfaces, UI improvements, and user-focused frontend enhancements in a live product environment.",
+    highlights: [
+      "Developed responsive, mobile-first frontend components for improved usability and product consistency.",
+      "Collaborated with the product and engineering team to refine user flows and improve conversion-oriented experiences.",
+      "Improved interface quality through clean component structure, accessibility-minded UI updates, and better front-end behavior.",
+    ],
+    technologies: ["React", "Responsive UI", "UX Improvements", "Frontend Development"],
   },
 ];
 
@@ -87,7 +92,7 @@ export const certificationEntries = [
     issuer: "IIT Madras",
     meta: "Certification",
     description:
-      "Strengthened Python fundamentals and data handling concepts that support analytical problem solving.",
+      "Strengthened Python fundamentals and data handling concepts used in analytical problem solving and applied data workflows.",
     skillsCovered: ["Python", "Data Analysis", "Problem Solving"],
   },
   {
@@ -95,7 +100,7 @@ export const certificationEntries = [
     issuer: "IIT Kharagpur",
     meta: "Certification",
     description:
-      "Learned testing fundamentals, defect lifecycle, and practical quality assurance workflows.",
+      "Learned testing fundamentals, defect lifecycle management, and quality assurance practices used in software delivery.",
     skillsCovered: ["Testing", "QA", "Test Design"],
   },
   {
@@ -103,7 +108,7 @@ export const certificationEntries = [
     issuer: "C-DAC Noida",
     meta: "Certification",
     description:
-      "Covered cloud concepts and deployment fundamentals relevant to modern application delivery.",
+      "Covered cloud concepts and deployment fundamentals relevant to modern application delivery and scalable infrastructure thinking.",
     skillsCovered: ["Cloud Basics", "Deployment", "Infrastructure Awareness"],
   },
   {
@@ -111,19 +116,12 @@ export const certificationEntries = [
     issuer: "IIT Kharagpur",
     meta: "Certification",
     description:
-      "Reinforced relational data modeling, schema thinking, and database design principles.",
+      "Reinforced relational data modeling, schema design, and database principles that support robust application architecture.",
     skillsCovered: ["Databases", "SQL", "Schema Design"],
   },
 ];
 
 export const timelineEntries = [
-  {
-    title: "2026 · Eduveera Internship",
-    category: "Experience",
-    description:
-      "Worked on responsive product interfaces, improving usability and supporting conversion-oriented flows in a live product environment.",
-    impact: "Production UI work and practical frontend ownership.",
-  },
   {
     title: "2026 · CRM System",
     category: "Flagship Project",
@@ -152,13 +150,6 @@ export const timelineEntries = [
     description:
       "Built the programming and database fundamentals that later shaped the portfolio's backend and data model decisions.",
     impact: "Established the core technical base for full-stack development.",
-  },
-  {
-    title: "Certifications",
-    category: "Learning",
-    description:
-      "Completed focused certifications in Python for Data Science, Software Testing, Cloud Computing, and DBMS.",
-    impact: "Reinforced breadth across analytics, quality, cloud, and data systems.",
   },
 ];
 
@@ -215,8 +206,8 @@ export const projectHighlights = [
       "Exportable reports",
       "Automated reminders and follow-ups",
     ],
-    repo: "",
-    demo: "",
+    repo: "https://github.com/Vishalrajputhere/ForgeCRM",
+    demo: "https://forge-crm-ivory.vercel.app/",
     featured: true,
     searchTags: ["CRM", "React", "Redux Toolkit", "JWT", "Invoices", "Analytics"],
     seo: {
@@ -278,8 +269,8 @@ export const projectHighlights = [
     lessonsLearned:
       "Workflow products are best when each role has a clear mental model and the UI mirrors that model directly.",
     futureImprovements: ["Rubric-based grading", "Notifications", "Submission history", "More granular permissions"],
-    repo: "",
-    demo: "",
+    repo: "https://github.com/Vishalrajputhere/pro-classroom",
+    demo: "https://pro-classroom.vercel.app/",
     featured: false,
     searchTags: ["classroom", "assignments", "Cloudinary", "RBAC", "plagiarism detection"],
     seo: {
